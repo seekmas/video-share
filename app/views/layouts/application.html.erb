@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <title>VideoShare</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'media', media: 'all', 'data-turbolinks-track' => true %>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= javascript_include_tag 'swfobject' %>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <% if current_user %>
+        <%= link_to('登出', destroy_user_session_path, :method => :delete) %> |
+        <%= link_to('修改密碼', edit_registration_path(:user)) %>
+    <% else %>
+        <%= link_to('註冊', new_registration_path(:user)) %> |
+        <%= link_to('登入', new_session_path(:user)) %>
+    <% end %>
+
+    <%= yield %>
+</div>
+
+<style>
+body {
+    background: url('<%= asset_path 'bg.png' %>')
+}
+</style>
+
+</body>
+</html>
