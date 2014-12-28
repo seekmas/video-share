@@ -16,8 +16,19 @@
     </p>
 
     <p>
-      <strong>Video:</strong>
-      <%= video_player(flashvars={:file => @medium.video.url , :image => nil }, attributes={:id => @medium.id , :name => 'media_player' , :width => '100%' , :height => '300px' , :message => 'Thanks for watching'}, params={}) %>
+      <video height="350"  poster="poster.jpg" controls="controls" preload=true>
+        <!-- MP4 for Safari, IE9, iPhone, iPad, Android, and Windows Phone 7 -->
+        <source type="video/mp4" src="<%= @medium.video.url %>" />
+        <!--<track kind="subtitles" src="subtitles.srt" srclang="en" />-->
+        <!--<track kind="chapters" src="chapters.srt" srclang="en" />-->
+        <!-- Flash fallback for non-HTML5 browsers without JavaScript -->
+        <object height="350" type="application/x-shockwave-flash" data="flashmediaelement.swf">
+          <param name="movie" value="flashmediaelement.swf" />
+          <param name="flashvars" value="controls=true&file=<%= @medium.video.url %>" />
+          <!-- Image as a last resort -->
+          <img src="myvideo.jpg" width="320" height="240" title="No video playback capabilities" />
+        </object>
+      </video>
 
     </p>
 
@@ -53,3 +64,10 @@
 
 </div>
 </div>
+
+<script>
+    $('video').mediaelementplayer({
+        features: ['playpause','loop','current','progress','duration','volume' , 'fullscreen']
+
+    });
+</script>

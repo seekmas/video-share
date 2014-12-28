@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <title>VideoShare</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <%= stylesheet_link_tag    'framework7', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= javascript_include_tag 'swfobject' %>
+
+</head>
+
+<body>
+
+
+<!-- Side bar left-->
+<div class="panel-overlay"></div>
+
+<div class="panel panel-left panel-reveal">
+  <div class="content-block">
+    <p>Left Panel content here</p>
+    <p><a href="#" class="panel-close">Close me</a></p>
+    <p><a href="#" class="open-right-panel">Open Right Panel</a></p>
+  </div>
+</div>
+
+<div class="panel-overlay"></div>
+<div class="panel panel-right panel-reveal">
+  <div class="content-block">
+    <p>Right Panel content here</p>
+    <p><a href="#" class="panel-close">Close me</a></p>
+    <p><a href="#" class="open-right-panel">Open Right Panel</a></p>
+  </div>
+</div>
+
+
+<!-- Views -->
+<div class="views">
+
+    <%= yield %>
+
+</div>
+
+<%= javascript_include_tag 'framework7', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'app', 'data-turbolinks-track' => true %>
+
+</body>
+</html>

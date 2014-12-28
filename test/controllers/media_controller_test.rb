@@ -18,7 +18,7 @@ class MediaControllerTest < ActionController::TestCase
 
   test "should create medium" do
     assert_difference('Medium.count') do
-      post :create, medium: { comment: @medium.comment, subject: @medium.subject, video: @medium.video }
+      post :create, medium: { comment: @medium.comment, subject: @medium.subject, image: @medium.video }
     end
 
     assert_redirected_to medium_path(assigns(:medium))
@@ -35,7 +35,7 @@ class MediaControllerTest < ActionController::TestCase
   end
 
   test "should update medium" do
-    patch :update, id: @medium, medium: { comment: @medium.comment, subject: @medium.subject, video: @medium.video }
+    patch :update, id: @medium, medium: { comment: @medium.comment, subject: @medium.subject, image: @medium.video }
     assert_redirected_to medium_path(assigns(:medium))
   end
 

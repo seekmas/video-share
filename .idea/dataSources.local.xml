@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails video-share: development" uuid="2cf57a45-8296-44da-ada2-d4164704b176">
+      <first-sync>true</first-sync>
+      <user-name>root</user-name>
+      <user-password>dfc6dfcfdfcbdfc4df92df92df9cdf9c</user-password>
+    </data-source>
+    <data-source name="Rails video-share: test" uuid="ab20376e-4ad0-431e-aa05-cf070b7f0037">
+      <first-sync>true</first-sync>
+      <user-name>root</user-name>
+      <user-password>dfc6dfcfdfcbdfc4df92df92df9cdf9c</user-password>
+    </data-source>
+    <data-source name="Rails video-share: production" uuid="7ca0e185-f873-4e7a-bd62-3130a0681297">
+      <first-sync>true</first-sync>
+      <user-name>root</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddfe7dff3dfebdffadffadff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+    </data-source>
+  </component>
+</project>

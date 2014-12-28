@@ -1,0 +1,11 @@
+<% @media[2,5].each do |c| %>
+
+    <p>
+      <%= [c.id , c.subject]
+          .join('.')
+          .sub( /视频/ , '<span style="color:red">视频</span>')
+          .sub( /试/ , '<span style="font-size: 120px;">试</span>')
+          .html_safe %>
+    </p>
+
+<% end %>

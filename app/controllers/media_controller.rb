@@ -2,6 +2,8 @@ class MediaController < ApplicationController
   before_action :authenticate_user!
   before_action :set_medium, only: [:show, :comment, :edit, :update, :destroy]
 
+  layout 'application'
+
   # GET /media
   # GET /media.json
   def index
@@ -11,8 +13,8 @@ class MediaController < ApplicationController
   # GET /media/1
   # GET /media/1.json
   def show
-
       @comment = Comment.new
+      #UserMailer.say_hi(@medium).deliver
   end
 
   # GET /media/new
@@ -28,7 +30,6 @@ class MediaController < ApplicationController
   def comment
       comment = @medium.comment.build(comment_params)
       comment.save
-
       redirect_to @medium
   end
 
@@ -39,6 +40,10 @@ class MediaController < ApplicationController
 
     respond_to do |format|
       if @medium.save
+
+        #视频更新成功通知
+        UserMailer.say_hi(@medium)
+
         format.html { redirect_to @medium, notice: 'Medium was successfully created.' }
         format.json { render :show, status: :created, location: @medium }
       else
@@ -80,7 +85,7 @@ class MediaController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def medium_params
-      params.require(:medium).permit(:subject, :description, :video)
+      params.require(:medium).permit(:subject, :description, :image)
     end
 
     def comment_params
