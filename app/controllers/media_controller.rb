@@ -42,7 +42,7 @@ class MediaController < ApplicationController
       if @medium.save
 
         #视频更新成功通知
-        UserMailer.say_hi(@medium)
+        #UserMailer.say_hi(@medium)
 
         format.html { redirect_to @medium, notice: 'Medium was successfully created.' }
         format.json { render :show, status: :created, location: @medium }
